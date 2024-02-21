@@ -14,7 +14,7 @@ uncrawled urls, crawling will start. If there is no urls to crawl, you could
 use `POST http://localhost:8000/crawl {url: 'url-seed'}`. If we want to increase number of workers, we can do that by
 changing `replicas` value in `compose.yml`. To check information of the crawl, you can query `page` table in MySQL.
 Credentials to do that, can be found in `compose.yml`. To limit the scope of the crawl, only same-domain links are
-crawled.
+crawled. Pipenv was used to manage python dependencies locally and later exported to `requirements.txt`.
 
 ## Issues and possible improvements
 
