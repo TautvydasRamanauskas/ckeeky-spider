@@ -21,17 +21,17 @@ crawled. Pipenv was used to manage python dependencies locally and later exporte
 - **Politeness** - Right now we are ignoring `robots.txt`.
 - **Spider traps** - Some detections for spider traps is necessary.
 - **Redirects** - Redirects are not handled and redirected pages are just ignored.
-- **Sitemaps** - By using sitemaps, we could avoid manually crawling domain and instantly get all links.
-- **Javascript** - Modern web uses JS a lot of, and because of that, we may be missing some elements. To crawl better we
-  could use Node with Protractor, so we could fully render pages.
+- **Sitemaps** - By using sitemaps, we could avoid manually crawling domain and instantly get all the links.
+- **Javascript** - Modern web uses JS a lot of, and because of that, we may be missing some elements. To crawl better,
+  we could use Node with Protractor, so we could fully render pages.
 - **Security** - We are using raw SQL queries which are prone to SQL injection and are unsafe. Passwords are saved in
   code and Git repository is public.
 - **Multiple IPs** - When crawling you are risking of getting blacklisted. If we used different trusted IPs for workers,
   this issue could be mitigated.
 - **Availability** - If container crashes, there is no recovery mechanism. We could use RedisCluster and Kubernetes to
   manage instances.
-- **Transactions** - If application crashes in some places, data could get corrupted and some pages will not be crawled
-  properly.
+- **Transactions and recovery** - If application crashes, sometimes data could get corrupted and some pages will not be
+  crawled properly.
 - **Non HTML pages** - Not all crawled pages are `HTML`. Other types of content should be handled differently.
-- **async** - Right now most of the worker time is spend on page fetch. If `async` would be used, workers could do some
-  other work during that.
+- **async** - Right now most of the worker's time is spend on page fetch. If `async` would be used, workers could do
+  some other work during page fetch.
