@@ -3,8 +3,6 @@ from pydantic import BaseModel
 
 from external import redis_queue, pages as pages_service
 
-TEST_URL = "https://blog.chriszacharias.com/"
-
 APP = FastAPI()
 
 

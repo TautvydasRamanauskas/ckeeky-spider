@@ -12,6 +12,6 @@ CREATE TABLE IF NOT EXISTS page (
 );
 
 SET @x := (SELECT COUNT(*) FROM information_schema.statistics WHERE table_name = 'page' AND index_name = 'idx_url' AND table_schema = database());
-SET @sql := if(@x > 0, 'SELECT ''Index exists.''', 'CREATE UNIQUE INDEX IF NOT EXISTS idx_url ON page(url);');
+SET @sql := if(@x > 0, 'SELECT ''Index exists.''', 'CREATE UNIQUE INDEX idx_url ON page(url);');
 PREPARE stmt FROM @sql;
 EXECUTE stmt;
